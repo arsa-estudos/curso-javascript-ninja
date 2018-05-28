@@ -29,10 +29,10 @@ function myFunction2() {
     var number1 = 10;
     var number2 = 20;
     var sum = function sum() {
-        return sum();
+        return number1 + number2;
     };
     console.log( 'A soma de 10 e 20 é igual a', sum ? sum() : undefined );
-    // return number1 + number2;
+    return sum();
 }
 myFunction2();
 
@@ -40,14 +40,14 @@ myFunction2();
     myFunction3();
 */
 function myFunction3() {
-    console.log( 'A soma de 40 e 50 é igual a', sum() );
+    var number1 = 40;
     var number2 = 50;
     console.log( 'Na função myFunction3, number1 é igual a', number1 );
-    var number1 = 40;
-    return sum();
     function sum() {
         return number1 + number2;
     };
+    console.log( 'A soma de 40 e 50 é igual a', sum() );
+    return sum();
 }
 myFunction3();
 
@@ -65,6 +65,12 @@ por parâmetro, INVOCADA, e passando a ela por parâmetro os dois valores
 que foram passadas para a primeira função `calculator`.
 */
 // ?
+
+function calculator( num1, num2 ) {
+    return (function( callback ) {
+			
+    })()
+}
 
 /*
 Declare uma variável chamada `sum`, e atribua a ela a função `calculator`,
