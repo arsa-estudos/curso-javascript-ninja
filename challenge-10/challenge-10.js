@@ -44,7 +44,6 @@
 		}
 	}
 
-
   /*
   Crie uma função chamada `isOperatorValid`, que receberá um operador por
   parâmetro.
@@ -56,9 +55,7 @@
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid( operador ){
-		return function(){
-
-		};
+		return ( operation[operador] !== undefined );
 	};
 
   /*
@@ -73,7 +70,18 @@
   operador passado para a função "calculator", e passando para esse método
   os dois parâmetros da função de retorno de "calculator".
   */
-  // ?
+  function calculator( operador ) {
+		if (isOperatorValid( operador )){
+			return function(x, y){
+				if (typeof (x) !== 'number') {
+					console.log('entrou aqui')
+					return false;
+				}
+			}
+		} else {
+			return false;
+		}
+	}
 
   /*
   Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -82,8 +90,7 @@
   'A operação [NUMBER1] [OPERATOR] [NUMBER2] =';
   Essa função mostrará a mensagem da operação que criaremos mais abaixo.
   */
-  // ?
-
+  var soma = calculator('+');
   /*
   Crie uma função chamada "showErrorMessage" que recebe um parâmetro: o
   operador da operação cálculo, quando a operação não for válida.
